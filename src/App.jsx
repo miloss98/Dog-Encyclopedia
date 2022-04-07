@@ -1,7 +1,9 @@
+import Home from "./Pages/Home";
+
 const App = () => {
   return (
     <div>
-      <h1> Dog Encyclopedia </h1>
+      <Home />
     </div>
   );
 };

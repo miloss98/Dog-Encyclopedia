@@ -1,11 +1,18 @@
 :root {
-  --yellow: #f9ed69;
+  --golden: #fdcf01;
+  --golden2: #ffee00;
   --orange: #f08a5d;
   --red: #b83b5e;
   --purple: #6a2c70;
+  --background: #121212;
+  --navbar-bgr: linear-gradient(#1708ff, #bfbfbf);
+  --blue: #1708ff;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  background: var(--background);
 }

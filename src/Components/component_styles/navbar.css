@@ -4,8 +4,8 @@
   width: 100vw;
   height: 16vh;
   display: flex;
-  background-color: var(--orange);
-  border-bottom: 3px solid var(--yellow);
+  background: var(--navbar-bgr);
+  border-bottom: 3px solid var(--golden);
 }
 .logo-container {
   display: flex;
@@ -26,18 +26,52 @@
   justify-content: center;
   align-items: center;
 }
+.search-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 2.5rem;
+  width: 85%;
+  background-color: var(--golden);
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 3px black;
+}
+#search-icon {
+  height: 1.8rem;
+  width: 1.5rem;
+}
 .input-field {
-  height: 2rem;
+  padding-left: 0.5rem;
+  height: 1.8rem;
   width: 20rem;
-  border-radius: 0.6rem;
-  margin-right: 0.3rem;
+  background-color: var(--golden);
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  color: black;
+}
+.input-field::placeholder {
+  font-style: italic;
 }
 .search-btn {
-  height: 2rem;
-  width: 4rem;
-  background: black;
+  height: 1.8rem;
+  width: 5rem;
+  outline: none;
+  border: none;
+  background-color: var(--blue);
+  color: var(--golden2);
   border-radius: 0.6rem;
-  color: var(--yellow);
+  margin-right: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 3px 3px 3px black;
+  opacity: 80%;
+}
+.search-btn:hover {
+  cursor: pointer;
+  height: 1.9rem;
+  width: 5.1rem;
 }
 .list-container {
   width: 30%;
@@ -54,13 +88,14 @@
   color: black;
   text-decoration: none;
   font-weight: 600;
+  font-size: 1.5rem;
 }
 .link:hover {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 .active {
-  color: var(--yellow);
+  color: var(--golden);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }

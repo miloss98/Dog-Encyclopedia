@@ -1,23 +1,48 @@
 .navbar {
+  font-size: 16px;
+  font-family: Verdana;
   width: 100vw;
   height: 16vh;
   display: flex;
-  background-color: yellow;
+  background-color: var(--orange);
+  border-bottom: 3px solid var(--yellow);
 }
 .logo-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 30%;
   height: 100%;
 }
 .dog-logo {
-  height: 100%;
+  height: 80%;
   width: 40%;
 }
+.search-bar-container {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-field {
+  margin-top: 5.5rem;
+  height: 2rem;
+  width: 20rem;
+  border-radius: 0.6rem;
+  margin-right: 0.3rem;
+}
+.search-btn {
+  margin-top: 5.5rem;
+  height: 2rem;
+  width: 4rem;
+  background: black;
+  border-radius: 0.6rem;
+  color: var(--yellow);
+}
 .list-container {
-  width: 60%;
+  width: 30%;
   height: 100%;
 }
 .nav-list {
@@ -25,20 +50,19 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  font-family: "Lucida Sans";
   list-style: none;
 }
 .link {
   color: black;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 600;
 }
 .link:hover {
   font-size: 1.1rem;
 }
 .active {
-  color: red;
+  color: var(--yellow);
   text-decoration: none;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
 }

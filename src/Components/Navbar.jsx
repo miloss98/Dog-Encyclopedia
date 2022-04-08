@@ -7,15 +7,26 @@ import "./component_styles/navbar.css";
 const Navbar = () => {
   return (
     <article className="navbar">
-      <div className="logo-container">
+      <section className="logo-container">
         <img
           className="dog-logo"
           src="./../../images/dog-enc-logo.png"
           alt="dog logo"
         />
-      </div>
+      </section>
+      <section className="search-bar-container">
+        <input
+          className="input-field"
+          type="text"
+          placeholder="e.g. Husky"
+        ></input>
+        <button className="search-btn" type="click">
+          {" "}
+          Search
+        </button>
+      </section>
 
-      <div className="list-container">
+      <section className="list-container">
         <ul className="nav-list">
           <li>
             <NavLink
@@ -36,7 +47,7 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-      </div>
+      </section>
     </article>
   );
 };

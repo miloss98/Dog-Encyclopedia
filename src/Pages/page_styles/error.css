@@ -1,0 +1,42 @@
+.error-container {
+  background-image: url("./../../images/error-img.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 84vh;
+}
+#not-found {
+  padding-top: 5rem;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.go-back-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0rem 0rem 1rem;
+  height: 4rem;
+  width: 10rem;
+}
+#go-back-btn {
+  height: 40px;
+  width: 40px;
+  outline: none;
+  border: none;
+  background: none;
+}
+#arrow-go-back {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+h4 {
+  padding-left: 0.5rem;
+  color: var(--golden);
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}

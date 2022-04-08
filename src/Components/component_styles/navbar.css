@@ -1,18 +1,21 @@
 .navbar {
   width: 100vw;
-  height: 12vh;
+  height: 16vh;
   display: flex;
-  background-color: grey;
+  background-color: yellow;
 }
 .logo-container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 40%;
   height: 100%;
 }
 .dog-logo {
-  margin-left: 5rem;
-  height: 100%;
-  width: 30%;
+  height: 90%;
+  width: 50%;
+  border-radius: 25px;
 }
 .list-container {
   width: 60%;

@@ -10,12 +10,7 @@ const Navbar = () => {
       <div className="logo-container">
         <img
           className="dog-logo"
-          src="./../../images/dog-logo.png"
-          alt="dog logo"
-        />
-        <img
-          className="dog-logo"
-          src="./../../images/dog-logo2.png"
+          src="./../../images/dog-enc-logo.png"
           alt="dog logo"
         />
       </div>

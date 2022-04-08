@@ -27,14 +27,12 @@
   align-items: center;
 }
 .input-field {
-  margin-top: 5.5rem;
   height: 2rem;
   width: 20rem;
   border-radius: 0.6rem;
   margin-right: 0.3rem;
 }
 .search-btn {
-  margin-top: 5.5rem;
   height: 2rem;
   width: 4rem;
   background: black;

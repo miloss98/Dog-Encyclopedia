@@ -7,28 +7,41 @@ import "./component_styles/navbar.css";
 const Navbar = () => {
   return (
     <article className="navbar">
-      <ul className="nav-list">
-        <li>
-          {" "}
-          <NavLink
-            to="/"
-            element={<Home />}
-            className={({ isActive }) => (isActive ? "active" : "link")}
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          {" "}
-          <NavLink
-            to="/about"
-            element={<About />}
-            className={({ isActive }) => (isActive ? "active" : "link")}
-          >
-            About
-          </NavLink>
-        </li>
-      </ul>
+      <div className="logo-container">
+        <img
+          className="dog-logo"
+          src="./../../images/dog-logo.png"
+          alt="dog logo"
+        />
+        <img
+          className="dog-logo"
+          src="./../../images/dog-logo2.png"
+          alt="dog logo"
+        />
+      </div>
+
+      <div className="list-container">
+        <ul className="nav-list">
+          <li>
+            <NavLink
+              to="/"
+              element={<Home />}
+              className={({ isActive }) => (isActive ? "active" : "link")}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              element={<About />}
+              className={({ isActive }) => (isActive ? "active" : "link")}
+            >
+              About
+            </NavLink>
+          </li>
+        </ul>
+      </div>
     </article>
   );
 };

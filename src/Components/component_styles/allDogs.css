@@ -1,0 +1,65 @@
+.all-dogs-container {
+  width: 100vw;
+  background: var(--dark-grey);
+  padding-bottom: 1rem;
+}
+.heading-div {
+  width: 100vw;
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--golden);
+  font-size: 1.5rem;
+}
+/* Dogs */
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 25px;
+  justify-content: center;
+}
+.single-dog {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 420px;
+  width: 420px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background: linear-gradient(var(--background), #bfbfbf);
+  box-shadow: 3px 3px 3px black;
+}
+.single-dog img {
+  height: 280px;
+  width: 400px;
+  border-radius: 0.5rem;
+}
+.top {
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+}
+.dog-name {
+  padding-bottom: 0.2rem;
+}
+span {
+  color: red;
+}
+.show-all {
+  background: var(--golden);
+  color: black;
+  height: 100%;
+  width: 25%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 0.2rem;
+  border-radius: 5px;
+}
+.show-all:hover {
+  cursor: pointer;
+  filter: brightness(110%);
+}

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+import "./component_styles/allDogs.css";
+//"https://api.thedogapi.com/v1/images/search?mime_types=jpg,png&limit=20"
 
 const AllDogs = () => {
   const [data, setData] = useState([]);
-  const url =
-    "https://api.thedogapi.com/v1/images/search?mime_types=jpg,png&limit=5";
+  const url = "https://api.thedogapi.com/v1/breeds/";
 
   const fetchData = async () => {
     try {
@@ -18,49 +19,50 @@ const AllDogs = () => {
     } catch (error) {}
   };
 
+  useState(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div>
-      AllDogs
-      <button onClick={fetchData}> fetch </button>
-      {data.map((dog) => {
-        const { breeds, id, url } = dog;
-        return (
-          <section key={id}>
-            <img src={url} alt="img" />
-            {breeds.map((breedInfo) => {
-              const {
-                id,
-                weight,
-                height,
-                name,
-                bred_for,
-                breed_group,
-                life_span,
-                temperament,
-              } = breedInfo;
-              return (
-                <article key={id}>
-                  <h1>{name}</h1>
-                  <p>
-                    Weight: <br></br> Imperial: {weight.imperial} <br></br>
-                    Metric: {weight.metric}
-                  </p>
-                  <p>
-                    Height: <br></br> Imperial: {height.imperial} <br></br>
-                    Metric: {height.metric}
-                  </p>
-                  <p>
-                    {" "}
-                    Bred for: {bred_for} <br></br>Breed groud: {breed_group}
-                  </p>
-                  <span> Lifespan: {life_span}</span>
-                  <p>Temperament: {temperament} </p>
-                </article>
-              );
-            })}
-          </section>
-        );
-      })}
+    <div className="all-dogs-container">
+      <header className="heading-div">
+        <h4> Welcome to Dog Encyclopedia! </h4>
+      </header>
+      <div className="container">
+        {data.map((dog) => {
+          const {
+            id,
+            name,
+            weight,
+            height,
+            bred_for,
+            breed_group,
+            life_span,
+            temperament,
+            origin,
+            image,
+          } = dog;
+          return (
+            <article key={id} className="single-dog">
+              <div id="img-div">
+                <img src={image.url} alt={`${name} image`} />
+              </div>
+              <div className="top">
+                <h3 className="dog-name">{name} </h3>
+                <button type="click" className="show-all">
+                  Show all
+                </button>
+              </div>
+              <p>
+                <span>Lifespan:</span> {life_span || "/"}
+              </p>
+              <p>
+                <span>Temperament:</span> {temperament || "/"}{" "}
+              </p>
+            </article>
+          );
+        })}
+      </div>
     </div>
   );
 };

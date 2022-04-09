@@ -4,7 +4,7 @@ import axios from "axios";
 const AllDogs = () => {
   const [data, setData] = useState([]);
   const url =
-    "https://api.thedogapi.com/v1/images/search?mime_types=jpg,png&limit=5&page=1";
+    "https://api.thedogapi.com/v1/images/search?mime_types=jpg,png&limit=5";
 
   const fetchData = async () => {
     try {
@@ -25,9 +25,40 @@ const AllDogs = () => {
       {data.map((dog) => {
         const { breeds, id, url } = dog;
         return (
-          <article key={id}>
+          <section key={id}>
             <img src={url} alt="img" />
-          </article>
+            {breeds.map((breedInfo) => {
+              const {
+                id,
+                weight,
+                height,
+                name,
+                bred_for,
+                breed_group,
+                life_span,
+                temperament,
+              } = breedInfo;
+              return (
+                <article key={id}>
+                  <h1>{name}</h1>
+                  <p>
+                    Weight: <br></br> Imperial: {weight.imperial} <br></br>
+                    Metric: {weight.metric}
+                  </p>
+                  <p>
+                    Height: <br></br> Imperial: {height.imperial} <br></br>
+                    Metric: {height.metric}
+                  </p>
+                  <p>
+                    {" "}
+                    Bred for: {bred_for} <br></br>Breed groud: {breed_group}
+                  </p>
+                  <span> Lifespan: {life_span}</span>
+                  <p>Temperament: {temperament} </p>
+                </article>
+              );
+            })}
+          </section>
         );
       })}
     </div>

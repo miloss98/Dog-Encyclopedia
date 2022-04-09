@@ -14,9 +14,17 @@ const Error = () => {
             alt="Go back?"
           />
         </button>{" "}
-        <h4> Go back? </h4>
+        <h4 className="go-back-h4"> Back </h4>
       </div>
-      <h1 id="not-found"> The page you requested does not exist!</h1>
+      <section className="not-found">
+        <section className="heading-container">
+          <h4 id="heading"> The page you requested does not exist!</h4>
+          <h4 id="error-h4"> ERROR 404 - NOT FOUND</h4>
+        </section>
+        <div className="sad-dog-container">
+          <div className="sad-dog"></div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -1,16 +1,15 @@
 :root {
   --golden: #fdcf01;
   --orange: #f08a5d;
-  --red: #b83b5e;
-  --purple: #6a2c70;
   --background: #121212;
-  --navbar-bgr: linear-gradient(#1708ff, #bfbfbf);
-  --blue: #1708ff;
+  --dark-grey: #383838;
+  --navbar-bgr: linear-gradient(var(--dark-grey), #bfbfbf);
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body {
   background: var(--background);

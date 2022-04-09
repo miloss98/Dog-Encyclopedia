@@ -58,7 +58,7 @@
   width: 5rem;
   outline: none;
   border: none;
-  background-color: var(--blue);
+  background-color: #383838;
   color: var(--golden);
   border-radius: 0.6rem;
   margin-right: 0.2rem;
@@ -66,7 +66,6 @@
   font-weight: 800;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-shadow: 3px 3px 3px black;
-  opacity: 80%;
 }
 .search-btn:hover {
   cursor: pointer;

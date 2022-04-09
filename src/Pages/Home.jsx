@@ -1,10 +1,11 @@
-import React from "react";
 import "./index.css";
+import AllDogs from "../Components/AllDogs";
 
 const Home = () => {
   return (
     <>
-      <div>Dog Encyclopedia homepage</div>
+      <h4> Welcome to Dog Encyclopedia! </h4>
+      <AllDogs />
     </>
   );
 };

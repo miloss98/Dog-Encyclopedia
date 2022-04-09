@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./page_styles/error.css";
 import goBack from "./../images/go-back.svg";

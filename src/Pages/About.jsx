@@ -1,4 +1,3 @@
-import React from "react";
 import "./page_styles/about.css";
 
 const About = () => {

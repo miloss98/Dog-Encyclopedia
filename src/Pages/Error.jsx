@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./page_styles/error.css";
+import goBack from "./../images/go-back.svg";
 
 const Error = () => {
   const navigate = useNavigate();
@@ -8,11 +9,7 @@ const Error = () => {
     <div className="error-container">
       <div className="go-back-div">
         <button id="go-back-btn" onClick={() => navigate(-1)}>
-          <img
-            id="arrow-go-back"
-            src="./../../images/go-back.svg"
-            alt="Go back?"
-          />
+          <img id="arrow-go-back" src={goBack} alt="Go back?" />
         </button>{" "}
         <h4 className="go-back-h4"> Back </h4>
       </div>

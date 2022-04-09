@@ -3,24 +3,18 @@ import { NavLink } from "react-router-dom";
 import About from "./../Pages/About";
 import Home from "./../Pages/Home";
 import "./component_styles/navbar.css";
+import searchIcon from "./../images/search-icon.svg";
+import dogLogo from "./../images/dog-enc-logo.png";
 
 const Navbar = () => {
   return (
     <article className="navbar">
       <section className="logo-container">
-        <img
-          className="dog-logo"
-          src="./../../images/dog-enc-logo.png"
-          alt="dog logo"
-        />
+        <img className="dog-logo" src={dogLogo} alt="dog logo" />
       </section>
       <section className="search-bar-container">
         <div className="search-div">
-          <img
-            id="search-icon"
-            src="./../../images/search-icon.svg"
-            alt="search icon"
-          />
+          <img id="search-icon" src={searchIcon} alt="search icon" />
           <input
             className="input-field"
             type="text"

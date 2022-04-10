@@ -1,9 +1,10 @@
 :root {
   --golden: #fdcf01;
-  --orange: #f08a5d;
-  --background: #121212;
-  --dark-grey: #383838;
-  --navbar-bgr: linear-gradient(#1b262c, #3282b8);
+  --background: #1b262c;
+  --blue: #0f4c75;
+  --light-blue: #3282b8;
+  --very-light-blue: #bbe1fa;
+  --navbar-bgr: linear-gradient(var(--background), var(--light-blue));
 }
 * {
   margin: 0;

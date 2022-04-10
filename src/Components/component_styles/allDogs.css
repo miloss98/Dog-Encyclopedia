@@ -56,9 +56,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--golden);
-  color: black;
-  height: 2rem;
+  background: var(--background);
+  color: var(--golden);
+  height: 1.8rem;
   width: 6rem;
   font-size: 0.8rem;
   font-weight: bold;

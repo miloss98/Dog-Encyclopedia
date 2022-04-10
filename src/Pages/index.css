@@ -3,7 +3,7 @@
   --orange: #f08a5d;
   --background: #121212;
   --dark-grey: #383838;
-  --navbar-bgr: linear-gradient(var(--dark-grey), #bfbfbf);
+  --navbar-bgr: linear-gradient(#1b262c, #3282b8);
 }
 * {
   margin: 0;

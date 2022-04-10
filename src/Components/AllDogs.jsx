@@ -47,7 +47,7 @@ const AllDogs = () => {
                 <h3 className="dog-name">{name} </h3>
                 <Link className="show-all" to={`/dogs/${id}`}>
                   {" "}
-                  Show all
+                  Read more
                 </Link>
               </div>
               <p>

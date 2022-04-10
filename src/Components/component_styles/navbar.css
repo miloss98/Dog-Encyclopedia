@@ -32,7 +32,7 @@
   align-items: center;
   height: 2.5rem;
   width: 85%;
-  background-color: var(--golden);
+  background-color: #3282b8;
   border-radius: 0.5rem;
   box-shadow: 3px 3px 3px black;
 }
@@ -44,7 +44,7 @@
   padding-left: 0.5rem;
   height: 1.8rem;
   width: 20rem;
-  background-color: var(--golden);
+  background-color: #3282b8;
   border: none;
   outline: none;
   font-size: 1.1rem;
@@ -52,13 +52,14 @@
 }
 .input-field::placeholder {
   font-style: italic;
+  color: #1b262c;
 }
 .search-btn {
   height: 1.8rem;
   width: 5rem;
   outline: none;
   border: none;
-  background-color: #383838;
+  background-color: #1b262c;
   color: var(--golden);
   border-radius: 0.6rem;
   margin-right: 0.2rem;

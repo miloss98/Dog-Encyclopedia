@@ -1,6 +1,6 @@
 .all-dogs-container {
   width: 100%;
-  background: var(--dark-grey);
+  background: #1b262c;
   padding-bottom: 1rem;
 }
 .heading-div {
@@ -30,7 +30,7 @@
   width: 315px;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background: var(--golden);
+  background: #0f4c75;
   filter: brightness(100%);
   box-shadow: 3px 3px 3px black;
 }
@@ -45,19 +45,20 @@
   justify-content: space-between;
 }
 .dog-name {
-  padding-bottom: 0.2rem;
+  padding: 0.2rem 0rem 0.2rem 0rem;
   font-size: 1rem;
+  color: var(--golden);
 }
 .short-desc {
-  color: red;
+  color: #bbe1fa;
 }
 .show-all {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--background);
-  color: var(--golden);
+  background: var(--golden);
+  color: black;
   height: 1.8rem;
   width: 6rem;
   font-size: 0.8rem;

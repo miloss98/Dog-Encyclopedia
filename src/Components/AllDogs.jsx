@@ -1,12 +1,14 @@
 import { useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./component_styles/allDogs.css";
+import searchIcon from "./../images/search-icon.svg";
 import { RingLoader } from "react-spinners";
 
 const AllDogs = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
+  //const [searchTerm, setSearchTerm] = useState("");
   const url = "https://api.thedogapi.com/v1/breeds/";
 
   const fetchData = async () => {
@@ -34,10 +36,27 @@ const AllDogs = () => {
       </div>
     );
   }
+  //if (data.length < 1) {
+  //return <h1> No dogs matched your search criteria</h1>;
+  //}
   return (
     <div className="all-dogs-container">
       <header className="heading-div">
-        <h4> Welcome to Dog Encyclopedia! </h4>
+        <h4> Search your favorite dog! </h4>
+        <section className="search-bar-container">
+          <div className="search-div">
+            <img id="search-icon" src={searchIcon} alt="search icon" />
+            <input
+              className="input-field"
+              type="text"
+              placeholder="e.g. Husky"
+            ></input>
+            <button className="search-btn" type="click">
+              {" "}
+              Search
+            </button>
+          </div>
+        </section>
       </header>
       <div className="container">
         {data.map((dog) => {

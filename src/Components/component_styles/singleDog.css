@@ -1,5 +1,5 @@
 .single-dog-container {
-  height: 82vh;
+  height: 84vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -61,10 +61,10 @@ nav h1 {
   justify-content: flex-start;
   align-items: flex-start;
 }
-#keyword {
-  color: var(--golden);
-}
 .details p {
   color: var(--very-light-blue);
   padding-bottom: 0.8rem;
+}
+#keyword {
+  color: var(--golden);
 }

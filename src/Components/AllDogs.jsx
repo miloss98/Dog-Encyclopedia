@@ -10,6 +10,7 @@ const AllDogs = () => {
   const url = "https://api.thedogapi.com/v1/breeds/";
 
   const fetchData = async () => {
+    setLoading(true);
     try {
       const response = await axios(url, {
         headers: {
@@ -18,6 +19,7 @@ const AllDogs = () => {
       });
       const data = response.data;
       setData(data);
+      setLoading(false);
     } catch (error) {}
   };
 

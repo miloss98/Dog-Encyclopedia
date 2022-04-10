@@ -12,10 +12,12 @@ const SingleDog = () => {
   const [loading, setLoading] = useState(false);
 
   const getDog = async () => {
+    setLoading(true);
     try {
       const response = await fetch(`${url}${dogId}`);
       const dogData = await response.json();
       setData(dogData);
+      setLoading(false);
     } catch (error) {}
   };
 

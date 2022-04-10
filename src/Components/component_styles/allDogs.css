@@ -75,3 +75,10 @@
 .single-dog p {
   color: var(--very-light-blue);
 }
+.spinner-container {
+  width: 100%;
+  height: 84vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

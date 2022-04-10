@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./component_styles/allDogs.css";
-import Loading from "../Components/Loading";
+import { RingLoader } from "react-spinners";
 
 const AllDogs = () => {
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,11 @@ const AllDogs = () => {
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="spinner-container">
+        <RingLoader color={"#3282B8"} loading={loading} size={150} />
+      </div>
+    );
   }
   return (
     <div className="all-dogs-container">

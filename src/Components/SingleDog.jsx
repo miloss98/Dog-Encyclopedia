@@ -1,9 +1,9 @@
 import "./component_styles/singleDog.css";
-import Loading from "./Loading";
 import Home from "./../Pages/Home";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import goBack from "./../images/go-back.svg";
+import { RingLoader } from "react-spinners";
 
 const SingleDog = () => {
   const url = "https://api.thedogapi.com/v1/breeds/";
@@ -27,7 +27,11 @@ const SingleDog = () => {
   }, [dogId]);
 
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="spinner-container">
+        <RingLoader color={"#3282B8"} loading={loading} size={150} />
+      </div>
+    );
   }
   return (
     <section className="single-dog-container">

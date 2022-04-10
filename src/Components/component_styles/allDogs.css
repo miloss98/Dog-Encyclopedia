@@ -40,7 +40,7 @@
   border-radius: 0.5rem;
 }
 .top {
-  width: 99%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -60,7 +60,7 @@
   background: var(--golden);
   color: black;
   height: 1.8rem;
-  width: 6rem;
+  width: 6.5rem;
   font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 1px;

@@ -47,10 +47,10 @@
 .dog-name {
   padding: 0.2rem 0rem 0.2rem 0rem;
   font-size: 1rem;
-  color: var(--golden);
+  color: white;
 }
 .short-desc {
-  color: #bbe1fa;
+  color: var(--golden);
 }
 .show-all {
   display: flex;
@@ -71,4 +71,7 @@
 .show-all:hover {
   cursor: pointer;
   filter: brightness(110%);
+}
+.single-dog p {
+  color: var(--very-light-blue);
 }

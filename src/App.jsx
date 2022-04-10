@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SharedLayout from "./Components/SharedLayout";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import Dog from "./Pages/Dog";
 import Error from "./Pages/Error";
+import SingleDog from "./Components/SingleDog";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/dogs" element={<Dog />} />
+            <Route path="/dogs/:dogId" element={<SingleDog />} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>

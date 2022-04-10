@@ -1,9 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./component_styles/allDogs.css";
-//"https://api.thedogapi.com/v1/images/search?mime_types=jpg,png&limit=20"
+import Loading from "../Components/Loading";
 
 const AllDogs = () => {
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const url = "https://api.thedogapi.com/v1/breeds/";
 
@@ -23,6 +25,9 @@ const AllDogs = () => {
     fetchData();
   }, []);
 
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="all-dogs-container">
       <header className="heading-div">
@@ -30,18 +35,7 @@ const AllDogs = () => {
       </header>
       <div className="container">
         {data.map((dog) => {
-          const {
-            id,
-            name,
-            weight,
-            height,
-            bred_for,
-            breed_group,
-            life_span,
-            temperament,
-            origin,
-            image,
-          } = dog;
+          const { id, name, bred_for, life_span, image } = dog;
           return (
             <article key={id} className="single-dog">
               <div id="img-div">
@@ -49,15 +43,16 @@ const AllDogs = () => {
               </div>
               <div className="top">
                 <h3 className="dog-name">{name} </h3>
-                <button type="click" className="show-all">
+                <Link className="show-all" to={`/dogs/${id}`}>
+                  {" "}
                   Show all
-                </button>
+                </Link>
               </div>
               <p>
-                <span>Lifespan:</span> {life_span || "/"}
+                <span className="short-desc">Lifespan:</span> {life_span || "/"}
               </p>
               <p>
-                <span>Temperament:</span> {temperament || "/"}{" "}
+                <span className="short-desc">Bred for:</span> {bred_for || "/"}{" "}
               </p>
             </article>
           );

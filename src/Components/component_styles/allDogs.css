@@ -45,10 +45,14 @@
 .dog-name {
   padding-bottom: 0.2rem;
 }
-span {
+.short-desc {
   color: red;
 }
 .show-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: var(--golden);
   color: black;
   height: 100%;
@@ -58,6 +62,7 @@ span {
   letter-spacing: 1px;
   margin-top: 0.2rem;
   border-radius: 5px;
+  text-decoration: none;
 }
 .show-all:hover {
   cursor: pointer;

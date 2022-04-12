@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./component_styles/allDogs.css";
@@ -8,7 +8,9 @@ import { RingLoader } from "react-spinners";
 const AllDogs = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
-  //const [searchTerm, setSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+  const [search, setSearch] = useState("");
+
   const url = "https://api.thedogapi.com/v1/breeds/";
 
   const fetchData = async () => {
@@ -25,9 +27,17 @@ const AllDogs = () => {
     } catch (error) {}
   };
 
-  useState(() => {
+  useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    setFilteredData(
+      data.filter((dog) =>
+        dog.name.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search, data]);
 
   if (loading) {
     return (
@@ -50,16 +60,18 @@ const AllDogs = () => {
               className="input-field"
               type="text"
               placeholder="e.g. Husky"
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
             ></input>
             <button className="search-btn" type="click">
-              {" "}
               Search
             </button>
           </div>
         </section>
       </header>
       <div className="container">
-        {data.map((dog) => {
+        {filteredData.map((dog) => {
           const { id, name, bred_for, life_span, image } = dog;
           return (
             <article key={id} className="single-dog">

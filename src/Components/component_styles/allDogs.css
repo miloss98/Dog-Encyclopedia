@@ -1,4 +1,5 @@
 .all-dogs-container {
+  min-height: 100vh;
   width: 100%;
   background: #1b262c;
   padding-bottom: 1rem;

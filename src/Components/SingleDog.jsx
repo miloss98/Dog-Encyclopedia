@@ -1,30 +1,14 @@
 import "./component_styles/singleDog.css";
 import Home from "./../Pages/Home";
-import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import goBack from "./../images/go-back.svg";
 import { RingLoader } from "react-spinners";
+import { useGlobalContext } from "../context";
 
 const SingleDog = () => {
-  const url = "https://api.thedogapi.com/v1/breeds/";
-  const imageUrl = "https://cdn2.thedogapi.com/images/";
-  const { dogId } = useParams();
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const getDog = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(`${url}${dogId}`);
-      const dogData = await response.json();
-      setData(dogData);
-      setLoading(false);
-    } catch (error) {}
-  };
-
-  useEffect(() => {
-    getDog();
-  }, [dogId]);
+  const { url, loading, setLoading, dogData, setDogData, imageUrl } =
+    useGlobalContext();
 
   if (loading) {
     return (
@@ -36,7 +20,7 @@ const SingleDog = () => {
   return (
     <section className="single-dog-container">
       <nav>
-        <h1> {data.name} </h1>
+        <h1> {dogData.name} </h1>
         <Link to="/" element={<Home />}>
           {" "}
           <button className="back-to-list">
@@ -48,39 +32,39 @@ const SingleDog = () => {
       <article className="dog-info-container">
         <div className="dog-img-div">
           <img
-            src={`${imageUrl}${data.reference_image_id}.jpg`}
-            alt={data.name}
+            src={`${imageUrl}${dogData.reference_image_id}.jpg`}
+            alt={dogData.name}
           />
         </div>
         <section className="details">
           <p id="life-span">
-            <span id="keyword">Life span:</span> {data.life_span}
+            <span id="keyword">Life span:</span> {dogData.life_span}
           </p>
           <p id="temperament">
-            <span id="keyword">Temperament:</span> {data.temperament}
+            <span id="keyword">Temperament:</span> {dogData.temperament}
           </p>
           <p id="breed">
-            <span id="keyword">Bred for:</span> {data.bred_for || "/"}
+            <span id="keyword">Bred for:</span> {dogData.bred_for || "/"}
           </p>
           <p id="breed">
-            <span id="keyword">Breed group:</span> {data.breed_group || "/"}
+            <span id="keyword">Breed group:</span> {dogData.breed_group || "/"}
           </p>
           <p>
-            <span id="keyword">Origin country:</span> {data.origin || "/"}
+            <span id="keyword">Origin country:</span> {dogData.origin || "/"}
           </p>
           <p>
             <span id="keyword">
               Height: <br></br>
             </span>{" "}
-            imperial: {data.height?.imperial || "/"} <br></br>
-            metric: {data.height?.metric}
+            imperial: {dogData.height?.imperial || "/"} <br></br>
+            metric: {dogData.height?.metric}
           </p>
           <p>
             <span id="keyword">
               Weight: <br></br>
             </span>{" "}
-            imperial: {data.weight?.imperial || "/"} <br></br>
-            metric: {data.weight?.metric}
+            imperial: {dogData.weight?.imperial || "/"} <br></br>
+            metric: {dogData.weight?.metric}
           </p>
         </section>
       </article>

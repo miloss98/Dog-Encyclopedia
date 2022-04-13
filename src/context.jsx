@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const AppContext = React.createContext();
 
-const AppProvider = ({ children }) => {
-  //api link
-  const url = "https://api.thedogapi.com/v1/breeds/";
+//api link
+const url = "https://api.thedogapi.com/v1/breeds/";
 
+const AppProvider = ({ children }) => {
+  /////////// All dogs /////////////
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -18,7 +20,7 @@ const AppProvider = ({ children }) => {
     setSearch(searchValue.current.value);
   };
 
-  //Data fetching
+  //api fetching
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -32,12 +34,12 @@ const AppProvider = ({ children }) => {
       setLoading(false);
     } catch (error) {}
   };
-  // useEff for initial render fetch
+  //initial render fetch
   useEffect(() => {
     fetchData();
   }, []);
 
-  // useEff for search/query
+  //search/query refetch
   useEffect(() => {
     setFilteredData(
       data.filter((dog) =>
@@ -45,6 +47,25 @@ const AppProvider = ({ children }) => {
       )
     );
   }, [search, data]);
+
+  /////////// Single dog /////////////
+  const [dogData, setDogData] = useState([]);
+  const imageUrl = "https://cdn2.thedogapi.com/images/";
+  const { dogId } = useParams();
+
+  const getDog = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(`${url}${dogId}`);
+      const dogData = await response.json();
+      setDogData(dogData);
+      setLoading(false);
+    } catch (error) {}
+  };
+  //single dog fetch
+  useEffect(() => {
+    getDog();
+  }, [dogId]);
   return (
     <AppContext.Provider
       value={{
@@ -60,6 +81,9 @@ const AppProvider = ({ children }) => {
         searchValue,
         searchDogs,
         fetchData,
+        dogData,
+        setDogData,
+        imageUrl,
       }}
     >
       {children}

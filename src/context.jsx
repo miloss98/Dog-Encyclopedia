@@ -50,15 +50,6 @@ const AppProvider = ({ children }) => {
   /////////// Single dog /////////////
   const [dogData, setDogData] = useState([]);
   const imageUrl = "https://cdn2.thedogapi.com/images/";
-  const getDog = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(`${url}${dogId}`);
-      const dogData = await response.json();
-      setDogData(dogData);
-      setLoading(false);
-    } catch (error) {}
-  };
 
   return (
     <AppContext.Provider

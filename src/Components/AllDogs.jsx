@@ -1,54 +1,11 @@
-import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import "./component_styles/allDogs.css";
 import searchIcon from "./../images/search-icon.svg";
 import { RingLoader } from "react-spinners";
-
-//api
-const url = "https://api.thedogapi.com/v1/breeds/";
+import { useGlobalContext } from "../context";
 
 const AllDogs = () => {
-  const [loading, setLoading] = useState(false);
-  const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
-  const [search, setSearch] = useState("");
-
-  //Search values
-  const searchValue = useRef("");
-  const searchDogs = () => {
-    setSearch(searchValue.current.value);
-  };
-  const handleRefresh = () => {
-    fetchData();
-    console.log(data);
-  };
-  //Data fetching on initial render
-  const fetchData = async () => {
-    setLoading(true);
-    try {
-      const response = await axios(url, {
-        headers: {
-          ["x-api-key"]: "baedd49c-04e6-4dd4-a0bb-4abcb9f50744",
-        },
-      });
-      const data = response.data;
-      setData(data);
-      setLoading(false);
-    } catch (error) {}
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  // useEff for search/query
-  useEffect(() => {
-    setFilteredData(
-      data.filter((dog) =>
-        dog.name.toLowerCase().includes(search.toLowerCase())
-      )
-    );
-  }, [search, data]);
+  const { loading, filteredData, searchValue, searchDogs } = useGlobalContext();
 
   if (loading) {
     return (
@@ -60,12 +17,12 @@ const AllDogs = () => {
   if (filteredData == "" && filteredData.length < 1) {
     return (
       <div className="no-dogs-container">
-        <p id="no-dogs">
+        <div id="no-dogs">
           {" "}
           No dogs matched your criteria :(
           <br></br>
           <h4> Please, try again. </h4>
-        </p>
+        </div>
 
         <section className="search-bar-container">
           <div className="search-div">

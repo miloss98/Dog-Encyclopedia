@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const AppContext = React.createContext();
@@ -51,8 +50,6 @@ const AppProvider = ({ children }) => {
   /////////// Single dog /////////////
   const [dogData, setDogData] = useState([]);
   const imageUrl = "https://cdn2.thedogapi.com/images/";
-  const { dogId } = useParams();
-
   const getDog = async () => {
     setLoading(true);
     try {
@@ -62,10 +59,7 @@ const AppProvider = ({ children }) => {
       setLoading(false);
     } catch (error) {}
   };
-  //single dog fetch
-  useEffect(() => {
-    getDog();
-  }, [dogId]);
+
   return (
     <AppContext.Provider
       value={{

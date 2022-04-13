@@ -1,6 +1,6 @@
 import "./component_styles/singleDog.css";
 import Home from "./../Pages/Home";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import goBack from "./../images/go-back.svg";
 import { RingLoader } from "react-spinners";
@@ -9,6 +9,21 @@ import { useGlobalContext } from "../context";
 const SingleDog = () => {
   const { url, loading, setLoading, dogData, setDogData, imageUrl } =
     useGlobalContext();
+
+  const { dogId } = useParams();
+  const getDog = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(`${url}${dogId}`);
+      const dogData = await response.json();
+      setDogData(dogData);
+      setLoading(false);
+    } catch (error) {}
+  };
+  //single dog fetch
+  useEffect(() => {
+    getDog();
+  }, [dogId]);
 
   if (loading) {
     return (

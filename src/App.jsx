@@ -3,7 +3,7 @@ import SharedLayout from "./Components/SharedLayout";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Error from "./Pages/Error";
-import SingleDog from "./Components/SingleDog";
+import SingleDog from "./Pages/SingleDog";
 
 const App = () => {
   return (

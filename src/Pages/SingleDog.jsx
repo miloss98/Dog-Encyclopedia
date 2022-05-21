@@ -1,5 +1,5 @@
-import "./component_styles/singleDog.css";
-import Home from "./../Pages/Home";
+import "./page_styles/singleDog.css";
+import Home from "./Home";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import goBack from "./../images/go-back.svg";

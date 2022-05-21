@@ -45,7 +45,7 @@ const AllDogs = () => {
   return (
     <div className="all-dogs-container">
       <header className="heading-div">
-        <h4> Search your favorite dog! </h4>
+        <h4> Search your favorite dog breed! </h4>
         <section className="search-bar-container">
           <div className="search-div">
             <img id="search-icon" src={searchIcon} alt="search icon" />

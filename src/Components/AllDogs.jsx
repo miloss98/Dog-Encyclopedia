@@ -11,6 +11,7 @@ const AllDogs = () => {
     return (
       <div className="spinner-container">
         <RingLoader color={"#3282B8"} loading={loading} size={150} />
+        <h1> Loading... </h1>
       </div>
     );
   }

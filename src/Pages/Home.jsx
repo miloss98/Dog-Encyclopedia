@@ -1,4 +1,4 @@
-import "./index.css";
+import "./../index.css";
 import AllDogs from "../Components/AllDogs";
 
 const Home = () => {

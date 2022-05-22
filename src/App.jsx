@@ -1,9 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SharedLayout from "./Components/SharedLayout";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Error from "./Pages/Error";
-import SingleDog from "./Pages/SingleDog";
+import { Home, About, Error, SingleDog } from "./Pages/index";
 
 const App = () => {
   return (

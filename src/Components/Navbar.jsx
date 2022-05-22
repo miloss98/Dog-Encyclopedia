@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
-import About from "./../Pages/About";
-import Home from "./../Pages/Home";
+import { Home, About } from "./../Pages/index";
 import "./component_styles/navbar.css";
 import dogLogo from "./../images/dog-enc-logo.png";
 
